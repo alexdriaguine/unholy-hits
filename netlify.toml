@@ -1,2 +1,4 @@
 [build]
-  Functions = "lambda"
+  functions = "dist/lambda"
+  publich = "dist/site"
+  command = "yarn build"
