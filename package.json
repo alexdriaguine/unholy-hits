@@ -9,9 +9,7 @@
     "start:server": "node build/index.js",
     "start:tunnel": "lt --port 8000 --subdomain unholy",
     "start:lambda": "netlify-lambda serve src/lambda",
-    "build:lambda": "netlify-lambda build src/lambda",
-    "build:client": "mkdir dist/client && cp src/index.html dist/client/index.html",
-    "build": "npm run build:lambda && npm run build:client"
+    "build:lambda": "netlify-lambda build src/lambda"
   },
   "keywords": [],
   "author": "",
