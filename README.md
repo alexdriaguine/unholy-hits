@@ -1,4 +1,4 @@
-# Unholy Hits
+# Unholy Hits :church: :fire:
 A slack bot that listens and puts your unholy hits in a spotify playlist
 
 Our playlist, curated by this bot can be found [here](https://open.spotify.com/user/bengtboxare/playlist/0rEur9a5W8pUVHqvBFIlsX?si=X4QTfs2SSKy4jqFgdO6nWw)
