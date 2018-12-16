@@ -1,4 +1,0 @@
-[build]
-  functions = "dist/lambda"
-  publich = "site"
-  command = "npm run build:lambda"

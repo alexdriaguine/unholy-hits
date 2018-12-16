@@ -4,32 +4,30 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "tsc",
-    "start:server": "node build/index.js",
+    "start:server": "node build/main.js",
     "start:tunnel": "lt --port 8000 --subdomain unholy",
-    "start:lambda": "netlify-lambda serve src/lambda",
-    "build:lambda": "netlify-lambda build src/lambda"
+    "start:dev": "npm run compile && npm run start:server"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
-    "@babel/plugin-transform-object-assign": "^7.2.0",
-    "@babel/preset-env": "^7.2.0",
-    "@babel/preset-typescript": "^7.1.0",
-    "@types/aws-lambda": "^8.10.15",
+    "@types/bell": "^9.3.2",
     "@types/dotenv": "^6.1.0",
     "@types/hapi": "^17.8.1",
-    "bufferutil": "^4.0.0",
-    "typescript": "3.2.2",
-    "utf-8-validate": "^5.0.1"
+    "@types/mongodb": "^3.1.17",
+    "@types/mongoose": "^5.3.5",
+    "@types/node": "^10.12.15",
+    "typescript": "3.2.2"
   },
   "dependencies": {
     "@slack/client": "^4.8.0",
+    "@types/boom": "^7.2.1",
+    "bell": "^9.4.0",
+    "boom": "^7.3.0",
     "dotenv": "^6.2.0",
     "hapi": "^17.8.1",
-    "netlify-lambda": "^1.1.1"
+    "mongoose": "^5.4.0"
   }
 }
