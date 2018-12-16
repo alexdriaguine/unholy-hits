@@ -2,6 +2,7 @@ import * as Hapi from 'hapi'
 import {slackWebClient} from '../slack'
 import * as Boom from 'boom'
 import {ChannelModel} from '../db/channel'
+import {SPOTIFY_REDIRECT_URI} from '../spotify/auth'
 
 export const setupCommandRoute: Hapi.ServerRoute = {
   method: 'POST',
@@ -16,7 +17,6 @@ export const setupCommandRoute: Hapi.ServerRoute = {
       channelId: channel_id,
     })
 
-
     if (existingChannel) {
       return slackWebClient.chat
         .postMessage({
@@ -28,7 +28,7 @@ export const setupCommandRoute: Hapi.ServerRoute = {
 
     return slackWebClient.chat
       .postMessage({
-        text: `<https://unholy.localtunnel.me/spotify/callback?channelId=${channel_id}&channelName=${channel_name}>`,
+        text: `<${SPOTIFY_REDIRECT_URI}/spotify/callback?channelId=${channel_id}&channelName=${channel_name}>`,
         channel: channel_id,
       })
       .then(res => ({status: 'OK'}))

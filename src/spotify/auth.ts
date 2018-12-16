@@ -6,6 +6,8 @@ import {IChannel, ChannelModel} from '../db/channel'
 
 export const SPOTIFY_CLIENT_ID = process.env['SPOTIFY_CLIENT_ID'] || ''
 export const SPOTIFY_CLIENT_SECRET = process.env['SPOTIFY_CLIENT_SECRET'] || ''
+export const SPOTIFY_REDIRECT_URI = process.env['SPOTIFY_REDIRECT_URI'] || ''
+export const SPOTIFY_PASSWORD = process.env['SPOTIFY_PASSWORD'] || ''
 
 export const spotifyAuthPlugin: Hapi.Plugin<{}> = {
   name: 'spotifyAuthPlugin',
@@ -16,9 +18,8 @@ export const spotifyAuthPlugin: Hapi.Plugin<{}> = {
       provider: 'spotify',
       clientId: SPOTIFY_CLIENT_ID,
       clientSecret: SPOTIFY_CLIENT_SECRET,
-      password:
-        'dude-generate-this-shit-later-with-something-byt-for-now-this-is-enought-localhost-shizzle',
-      location: 'https://unholy.localtunnel.me',
+      password: SPOTIFY_PASSWORD,
+      location: SPOTIFY_REDIRECT_URI,
       isSecure: true,
       scope: [
         'user-read-email',
