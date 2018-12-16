@@ -16,14 +16,11 @@ export const setupCommandRoute: Hapi.ServerRoute = {
       channelId: channel_id,
     })
 
+
     if (existingChannel) {
       return slackWebClient.chat
         .postMessage({
-          text: `Channel ${channel_name} already has a master.\n${JSON.stringify(
-            existingChannel,
-            null,
-            2,
-          )}`,
+          text: `Channel ${channel_name} already has a master.`,
           channel: channel_id,
         })
         .then(() => ({status: 'OK'}))

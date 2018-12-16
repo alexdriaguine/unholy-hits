@@ -1,7 +1,7 @@
 require('dotenv').config()
 import * as Hapi from 'hapi'
 import {commandRoutes} from './commands/index'
-import {spotifyAuthPlugin} from './oauth/spotify'
+import {spotifyAuthPlugin} from './spotify/auth'
 import {eventRoutes} from './events'
 import * as db from './db'
 
