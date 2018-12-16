@@ -9,6 +9,7 @@ export interface IChannel {
     username: string
     accessToken: string
     refreshToken: string
+    tokenExpirationDate: Date
   }
 }
 
@@ -22,6 +23,7 @@ export var channelSchema: Schema = new Schema({
     username: String,
     accessToken: String,
     refreshToken: String,
+    tokenExpirationDate: Date
   },
 })
 
