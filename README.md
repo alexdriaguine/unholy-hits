@@ -1,3 +1,6 @@
+# Unholy Hits
+A slack bot that listens and puts your unholy hits in a spotify playlist
+
 ## TODO, version 1
 - [x] figure out how we setup this shit. one option - /setup command, that will create a record for this
 channel in the db, and present a spotify oauth link, connect the spotify account and save it in db. Other is, as soon as we deploy this bot
