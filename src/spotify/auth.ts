@@ -1,6 +1,6 @@
 import * as Hapi from 'hapi'
 import * as Bell from 'bell'
-import {slackWebClient} from '../slack'
+import {slackWebClient, sendMessage, emojis} from '../slack'
 import * as Boom from 'boom'
 import {IChannel, ChannelModel} from '../db/channel'
 
@@ -69,14 +69,15 @@ export const spotifyAuthPlugin: Hapi.Plugin<{}> = {
           return channel
             .save()
             .then(() =>
-              slackWebClient.chat.postMessage({
+              sendMessage({
                 text: `${
                   (request.auth.credentials as any).profile.username
                 } authenticaded their spotify account`,
                 channel: query.channelId,
+                emoji: emojis.church,
               }),
             )
-            .then(() => ({status: 'OK', message: 'Authenticated'}))
+            .catch(Boom.boomify)
         },
       },
     })

@@ -16,6 +16,8 @@ into the channel, the bot greets us and runs the setup. Should be basic at first
 - [ ] delete, if we want to reset the bot for a channel, delete shit 
 - [ ] /add command, that takes Artist - Song, searches, presents findings (interactive component), and adds to playlist
 - [x] DO NOT ADD DUPLICATES
+- [ ] use Signing Secret for each request!
+- [ ] clean up types (extract inline, generate types for requests, generate return types for spotify etc etc..)
 
 ## TODO, future
 - [ ] interactive component upon /setup command. should, after connecting spotify, ask if create playlist, or select one from dropdown.

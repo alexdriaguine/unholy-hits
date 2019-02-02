@@ -9,4 +9,5 @@ export interface MessageEvent {
   subtype: string
   channel: string
   text: string
+  user: string
 }

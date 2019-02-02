@@ -10,6 +10,7 @@ export interface IChannel {
     accessToken: string
     refreshToken: string
     tokenExpirationDate: Date
+    playlistUri?: string
   }
 }
 
@@ -23,7 +24,8 @@ export var channelSchema: Schema = new Schema({
     username: String,
     accessToken: String,
     refreshToken: String,
-    tokenExpirationDate: Date
+    tokenExpirationDate: Date,
+    playlistUri: String
   },
 })
 
